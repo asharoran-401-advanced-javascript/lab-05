@@ -1,0 +1,25 @@
+{
+  "name": "lab-05",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "test-watch": "jest --watchAll --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asharoran-401-advanced-javascript/lab-05.git"
+  },
+  "author": "ASHAR ALORAN",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asharoran-401-advanced-javascript/lab-05/issues"
+  },
+  "homepage": "https://github.com/asharoran-401-advanced-javascript/lab-05#readme",
+  "dependencies": {
+    "@code-fellows/supergoose": "^1.0.1",
+    "jest": "^25.1.0",
+    "mongoose": "^5.8.9"
+  }
+}
