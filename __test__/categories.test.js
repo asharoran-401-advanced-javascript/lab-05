@@ -47,8 +47,16 @@ describe('Categories Model', () => {
       let obj = { name : 'Test Category'};
       return categorie.create(obj)
         .then( record =>{
-          return categorie.delete(record._id);
+          return categorie.get(record._id)
+            .then(category =>{
+              return categorie.delete(category._id)
+              .then( () =>{
+              return categorie.get(category._id)
+              .then( (categoryDeleted) =>{
+              expect(categoryDeleted).toEqual(null)
+            })
+                });
+              });
+           });
         });
     });
-  
-  });

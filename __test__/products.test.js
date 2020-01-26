@@ -60,8 +60,17 @@ describe(' Prodaucts Module' , () =>{
         quantity_in_stock : 10,
       };
       return products.create(obj)
-        .then( record =>{
-          return products.delete(record._id);
-        });
+      .then( record =>{
+        return products.get(record._id)
+          .then(product =>{
+            return products.delete(product._id)
+            .then( () =>{
+            return products.get(product._id)
+            .then( (productDeleted) =>{
+            expect(productDeleted).toEqual(null)
+          })
+              });
+            });
+         });
+      });
     });
-  });
